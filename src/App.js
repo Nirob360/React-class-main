@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import Calclutor from './components/Calclutor';
+import Emoji from './components/composition/Emoji';
+import Text from './components/composition/Text';
 
 function App() {
     return (
         <div className="App">
-            <Calclutor />
+            <Emoji>{({ addEmoji }) => <Text addEmoji={addEmoji} />}</Emoji>
         </div>
     );
 }
