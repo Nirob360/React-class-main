@@ -1,24 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import ClickCounter from './components/ClickCounter';
-import Counter from './components/Counter';
-import HoverCounter from './components/HoverCounter';
+import MyComponent from './components/MyComponent';
 
-function App() {
+export default function App() {
+    const [show, setShow] = useState(true);
     return (
         <div className="App">
-            <Counter
-                render={(counter, incrementCount) => (
-                    <ClickCounter counter={counter} incrementCount={incrementCount} />
-                )}
-            />
-            <Counter
-                render={(counter, incrementCount) => (
-                    <HoverCounter counter={counter} incrementCount={incrementCount} />
-                )}
-            />
+            <div>{show && <MyComponent />} </div>
+
+            <h2>
+                <button type="button" onClick={() => setShow((prevShow) => !prevShow)}>
+                    {show ? 'Hide post' : 'show post'}
+                </button>
+            </h2>
         </div>
     );
 }
-
-export default App;
