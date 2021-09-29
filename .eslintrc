@@ -13,10 +13,11 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true,
+    "es6": false,
     "jest": true
   },
   "rules": {
+    "prefer-const": 0,
     "react/prefer-stateless-function": 0,
     "class-methods-use-this": 0,
     "react/destructuring-assignment": 0,
